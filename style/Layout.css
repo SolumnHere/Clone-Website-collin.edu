@@ -171,12 +171,12 @@ footer {
                 flex-grow: 1;
                 align-items: center;
                 margin: 0 10px;     
-                border-bottom: 2px solid rgba(253, 193, 38);
+                box-shadow: 0 2px 0 0 rgba(253, 193, 38);
                 cursor: pointer;
                 transition: border-bottom 0.3s ease;
 
                 &:hover {
-                    border-bottom: 4px solid rgba(253, 193, 38);
+                    box-shadow: 0 4px 0 0 rgba(253, 193, 38);
 
                     img {
                         transform: translateX(20px);
@@ -186,7 +186,6 @@ footer {
                 img {
                     width: 20px;
                     transition: transform 0.3s ease;
-                    
                     filter: invert(82%) sepia(51%) saturate(954%) hue-rotate(336deg) brightness(102%) contrast(99%);
                 }
             }
