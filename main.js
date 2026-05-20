@@ -61,6 +61,17 @@ document.querySelectorAll('.location-link').forEach(link =>
         if (featuredImage && newImgSrc) {
             featuredImage.src = newImgSrc
         }
+
+        document.querySelectorAll('.campus-description').forEach(desc => {
+            desc.style.display = 'none'; 
+        });
+
+        const targetId = this.getAttribute('data-target');
+        const targetDesc = document.getElementById(targetId);
+        if (targetDesc) {
+            targetDesc.style.display = 'block'; 
+        }
+
     })
 )
 
