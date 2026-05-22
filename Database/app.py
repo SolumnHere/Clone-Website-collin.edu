@@ -33,10 +33,28 @@ def register_page():
     else:
         return render_template('CougarWeb.html')
 
+@user_data.route('/login', methods=['POST', 'GET'])
+def login_page():
+    if request.method == "POST":
+        return "You have login!"
+    return render_template('CougarWeb.html')
+
 @user_data.route('/', methods=['GET'])
 def index():
     tasks = userData.query.order_by(userData.date_created).all()
     return render_template('index.html', users=tasks)
+
+@user_data.route('/delete/<int:id>')
+def delete(id):
+    task_to_delete = userData.query.get_or_404(id)
+
+    try:
+        db.session.delete(task_to_delete)
+        db.session.commit()
+        return redirect('/')
+    except:
+        return 'There was a problem deleting that task'
+
 
 if __name__ == "__main__":
     user_data.run(debug=True)   

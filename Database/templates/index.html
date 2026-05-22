@@ -27,11 +27,9 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.password }}</td> 
                 <td>{{ user.date_created.date() }}</td>
-                <!-- <td>
+                <td>
                     <a href="/delete/{{user.id}}">Delete</a>
-                    <br>
-                    <a href="/update/{{user.id}}">Update</a>
-                </td> -->
+                </td>
             </tr>
         {% endfor %}
     </table>

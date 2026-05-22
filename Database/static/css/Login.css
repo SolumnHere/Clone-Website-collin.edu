@@ -94,21 +94,57 @@ body {
         color: #333;
         font-weight: 600;
     }
+    .register {
+        /* display: none;
 
-    .register-link {
-        font-size: 14.5px;
-        text-align: center;
-        margin: 20px 0 15px;
+        &:active {
+            display: block;
+        } */
 
-        p a {
-            color: white;
-            text-decoration: none;
-            font-weight: 600;
+        .register-link {    
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
 
-            &:hover {
-                text-decoration: underline;
+            p a {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
 
+                &:hover {
+                    text-decoration: underline;
+
+                }
             }
+        }
+    }
+    
+
+    .login {
+
+        .login-link {    
+            font-size: 14.5px;
+            text-align: center;
+            margin: 20px 0 15px;
+
+            p a {
+                color: white;
+                text-decoration: none;
+                font-weight: 600;
+
+                &:hover {
+                    text-decoration: underline;
+
+                }
+            }
+        }
+    }
+
+    .login, .register {
+        display: none; 
+
+        &.active {
+            display: block; 
         }
     }
 }
