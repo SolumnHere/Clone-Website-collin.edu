@@ -36,7 +36,13 @@ def register_page():
 @user_data.route('/login', methods=['POST', 'GET'])
 def login_page():
     if request.method == "POST":
-        return "You have login!"
+        username_input = request.form.get('Username')
+        password_input = request.form.get('Password')
+        user = userData.query.filter_by(user_name=username_input).first()
+        if user and user.password == password_input:
+            return f"Welcome {user.user_name}! You have logged in."
+        else:
+            return "Invalid Username or Password! Please try again."
     return render_template('CougarWeb.html')
 
 @user_data.route('/', methods=['GET'])
